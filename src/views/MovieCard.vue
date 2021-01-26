@@ -19,8 +19,7 @@ export default {
 
   methods: {
     deleteMovie() {
-      console.log("To Remove: ", this.movie);
-      this.$emit("remove-movie", this.movie);
+      this.$store.commit("removeMovie", this.movie);
     },
   },
 };

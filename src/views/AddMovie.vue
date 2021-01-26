@@ -63,7 +63,7 @@ export default {
         desc: this.desc
       }
 
-      this.$emit("add-new-movie", newMovie)
+      this.$store.commit("addNewMovie", newMovie);
     },
   },
 };

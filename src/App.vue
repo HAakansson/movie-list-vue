@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <AddMovie @add-new-movie="sendNewMovieToMovieList" />
-    <MovieList :newMovie="newMovie" />
+    <AddMovie />
+    <MovieList />
   </div>
 </template>
 
@@ -13,18 +13,6 @@ export default {
   components: {
     AddMovie,
     MovieList,
-  },
-
-  data(){
-    return {
-      newMovie: null
-    }
-  },
-
-  methods: {
-    sendNewMovieToMovieList(movie){
-      this.newMovie = movie;
-    }
   },
 };
 </script>
