@@ -1,21 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import AddMovie from '../views/AddMovie.vue'
+// Jag använder mig inte av router-filen i detta projekt.
 
-Vue.use(VueRouter)
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-const routes = [
-  {
-    path: '/',
-    name: 'AddMovie',
-    component: AddMovie
-  },
-]
+Vue.use(VueRouter);
+
+const routes = [];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

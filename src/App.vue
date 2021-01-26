@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <router-view /> -->
     <AddMovie @add-new-movie="sendNewMovieToMovieList" />
     <MovieList :newMovie="newMovie" />
   </div>
