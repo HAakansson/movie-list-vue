@@ -1,7 +1,12 @@
 <template>
   <div class="movie-list">
     <div v-if="movies.length > 0">
-      <MovieCard v-for="(movie, i) in movies" :key="i" :movie="movie" />
+      <MovieCard
+        v-for="(movie, i) in movies"
+        :key="i"
+        :movie="movie"
+        @remove-movie="removeMovie"
+      />
     </div>
   </div>
 </template>
@@ -17,11 +22,11 @@ export default {
   props: ["newMovie"],
 
   watch: {
-    newMovie: function(newMovie, oldVal){
-      console.log("Old value: ", oldVal)
-      console.log("New value: ", newMovie)
-      this.movies.unshift(newMovie)
-    }
+    newMovie: function(newMovie, oldVal) {
+      console.log("Old value: ", oldVal);
+      console.log("New value: ", newMovie);
+      this.movies.unshift(newMovie);
+    },
   },
 
   data() {
@@ -47,6 +52,10 @@ export default {
     addMovieToMovies(newMovie) {
       this.movies.push(newMovie);
       console.log("In App.vue - movies: ", this.movies);
+    },
+    removeMovie(movieToRemove) {
+      console.log("In movielist", movieToRemove);
+      this.movies = this.movies.filter((movie) => movieToRemove !== movie);
     },
   },
 };
